@@ -136,10 +136,10 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 36px;
   align-items: center;
-  padding: 72px 0 36px;
+  padding: 84px 0 44px;
 }
 
 .eyebrow {
@@ -243,6 +243,15 @@ h3 {
 
 .terminal-card {
   overflow: hidden;
+  position: relative;
+}
+
+.terminal-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(137, 243, 215, 0), rgba(137, 243, 215, 0.35), rgba(137, 243, 215, 0));
 }
 
 .terminal-topbar {
@@ -261,7 +270,7 @@ h3 {
 }
 
 .terminal-body {
-  padding: 18px 20px 22px;
+  padding: 20px 22px 26px;
   font-family: var(--mono);
   font-size: 0.96rem;
   color: #d8f8ee;
@@ -269,6 +278,11 @@ h3 {
 
 .terminal-body p {
   margin-bottom: 10px;
+}
+
+.terminal-line strong {
+  color: #f2fffc;
+  font-weight: 600;
 }
 
 .prompt {
@@ -432,8 +446,26 @@ h3 {
 
 .install-sidebar {
   display: grid;
-  gap: 22px;
+  gap: 18px;
   background: var(--panel-strong);
+}
+
+.sidebar-block {
+  padding: 2px 0 0;
+}
+
+.sidebar-block + .sidebar-block {
+  padding-top: 18px;
+  border-top: 1px solid rgba(139, 224, 219, 0.1);
+}
+
+.sidebar-label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .command-cloud {
@@ -457,7 +489,11 @@ h3 {
 }
 
 .closing-card {
-  padding: 32px;
+  padding: 36px 32px;
+}
+
+.closing-soft {
+  color: var(--soft);
 }
 
 @media (max-width: 920px) {
@@ -496,6 +532,7 @@ h3 {
 
   .hero {
     padding-top: 42px;
+    gap: 22px;
   }
 
   .panel,
