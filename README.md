@@ -17,3 +17,7 @@ Then open <http://localhost:4173>.
 ## Deployment
 
 The site is intended for Vercel.
+
+Because this repo is plain static files, Vercel can deploy it without a build
+step. Point the project at this repository and use the default static-site
+behavior.

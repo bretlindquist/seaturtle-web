@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SeaTurtle CLI — Meet CT</title>
+    <title>SeaTurtle CLI — Meet CT in the Shell</title>
     <meta
       name="description"
-      content="Meet SeaTurtle CLI — a warm, project-aware coding companion with a clear path to install and begin."
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
     />
+    <meta name="theme-color" content="#07131a" />
+    <meta property="og:title" content="SeaTurtle CLI — Meet CT in the Shell" />
+    <meta
+      property="og:description"
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/social-card.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SeaTurtle CLI — Meet CT in the Shell" />
+    <meta
+      name="twitter:description"
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
+    />
+    <meta name="twitter:image" content="/social-card.svg" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +43,7 @@
           <span class="brand-text">SeaTurtle CLI</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
+          <a href="#about">Meet CT</a>
           <a href="#difference">Why it feels different</a>
           <a href="#install">Install</a>
         </nav>
@@ -40,15 +57,16 @@
             <p class="lede">
               SeaTurtle CLI, or CT, is a coding companion that tries to feel
               less like a sterile interface and more like a steady presence in
-              the shell. Warm when warmth helps. Sharp when the work needs it.
+              the shell. Warm when warmth helps. Sharp when the work turns real.
             </p>
             <p class="lede subtle">
-              So this page keeps the same rhythm. First you meet the creature.
-              Then, when it feels right, you invite it onto your machine.
+              This page keeps the same rhythm. First you meet the creature.
+              Then, if it feels like your kind of company, you invite it onto
+              your machine.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#install">Install CT</a>
-              <a class="button secondary" href="#about">Who is this?</a>
+              <a class="button secondary" href="#about">Meet CT first</a>
             </div>
           </div>
 
@@ -62,6 +80,7 @@
               <p class="terminal-line">Project recognized: <strong>seaturtle-website</strong></p>
               <p class="terminal-line">Companion posture: <strong>available</strong></p>
               <p class="terminal-line">Work posture: <strong>warm operator</strong></p>
+              <p class="terminal-line">Install path: <strong>ready when you are</strong></p>
               <p class="terminal-gap"></p>
               <p><span class="prompt">/</span>login</p>
               <p><span class="prompt">/</span>continue</p>
@@ -148,14 +167,17 @@
             </div>
             <p class="install-note">
               Right now the clearest path is a source-build install from the
-              `seaturtle-cli` repository. A little hands-on, but honest.
+              `seaturtle-cli` repository. A little hands-on, but it tells the
+              truth about what is actually happening.
             </p>
           </div>
 
           <div class="install-layout">
             <article class="panel install-steps">
               <p class="install-intro">
-                The current path is real, local, and slightly hands-on. No fake one-click fog.
+                The current path is real, local, and slightly hands-on. The
+                installer checks what it needs, builds the bundle, and tells you
+                what to do next if your shell cannot see `ct` yet.
               </p>
               <ol>
                 <li>
@@ -173,8 +195,9 @@ cd seaturtle-cli</code></pre>
                     <pre><code>./scripts/install-local-cli.sh --build</code></pre>
                   </div>
                   <p class="step-note">
-                    This builds the development bundle and installs `ct`,
-                    `seaturtle`, and `ct-dev` for local use.
+                    This builds the development bundle, installs `ct`,
+                    `seaturtle`, and `ct-dev`, and checks the build
+                    prerequisites before it starts.
                   </p>
                 </li>
                 <li>
@@ -183,6 +206,10 @@ cd seaturtle-cli</code></pre>
                     <button class="copy-button" data-copy="ct">Copy</button>
                     <pre><code>ct</code></pre>
                   </div>
+                  <p class="step-note">
+                    If `ct` is not on your `PATH` yet, the installer should tell
+                    you where it landed and what to add.
+                  </p>
                 </li>
               </ol>
             </article>
@@ -201,9 +228,11 @@ cd seaturtle-cli</code></pre>
                 <p class="sidebar-label">When CT wakes up</p>
                 <h3>Choose your way in</h3>
                 <p>
-                  CT can guide you through Anthropic auth, Anthropic Console
-                  auth, or OpenAI Codex OAuth. If you prefer the key-shaped
-                  route, `OPENAI_API_KEY` works too.
+                  CT can guide you through Anthropic account auth, Anthropic
+                  Console auth, or OpenAI Codex OAuth. On the OpenAI side, the
+                  preferred path is native CT-owned OAuth, with legacy Codex
+                  CLI auth still available as a fallback. If you prefer a
+                  key-shaped route, `OPENAI_API_KEY` works too.
                 </p>
               </div>
               <div class="sidebar-block">
@@ -214,6 +243,8 @@ cd seaturtle-cli</code></pre>
                   <span>/continue</span>
                   <span>/resume</span>
                   <span>/status</span>
+                  <span>/model</span>
+                  <span>/effort</span>
                   <span>/autowork</span>
                   <span>/mermaid</span>
                   <span>/haiku</span>
@@ -228,15 +259,16 @@ cd seaturtle-cli</code></pre>
             <p class="eyebrow">A small promise</p>
             <h2>Useful, yes. Flat, no.</h2>
             <p>
-              SeaTurtle is trying to keep a little life in the shell while still
-              being honest about what it can do. Clear steps. Real capabilities.
-              A steadier presence while you work.
+              SeaTurtle is trying to keep a little life in the shell without
+              getting vague about what it can do. Clear steps. Real
+              capabilities. A steadier presence while you work.
             </p>
             <p class="closing-soft">
-              If that sounds like your kind of creature, come say hello.
+              If that sounds like your kind of creature, come let it meet your
+              terminal.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#install">Install now</a>
+              <a class="button primary" href="#install">Bring CT home</a>
               <a class="button secondary" href="https://github.com/bretlindquist/seaturtle-cli">View the repo</a>
             </div>
           </article>

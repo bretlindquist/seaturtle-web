@@ -1,0 +1,17 @@
+{
+  "name": "SeaTurtle CLI",
+  "short_name": "SeaTurtle",
+  "description": "A warm coding companion for the shell.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07131a",
+  "theme_color": "#07131a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

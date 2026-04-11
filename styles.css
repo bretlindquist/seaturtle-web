@@ -17,6 +17,7 @@
 
 * {
   box-sizing: border-box;
+  min-width: 0;
 }
 
 html {
@@ -26,6 +27,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 12% 20%, rgba(78, 186, 183, 0.22), transparent 0 28%),
     radial-gradient(circle at 82% 16%, rgba(87, 114, 255, 0.18), transparent 0 24%),
@@ -369,18 +371,19 @@ h3 {
 }
 
 .section-install {
-  padding-top: 54px;
+  padding-top: 62px;
 }
 
 .install-head {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
+  margin-bottom: 26px;
 }
 
 .install-note {
-  max-width: 28rem;
+  max-width: 30rem;
 }
 
 .install-layout {
@@ -394,7 +397,7 @@ h3 {
 }
 
 .install-intro {
-  margin: 0 0 22px;
+  margin: 0 0 26px;
   max-width: 42rem;
 }
 
@@ -422,6 +425,7 @@ h3 {
   font-family: var(--mono);
   font-size: 0.95rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
 .copy-button {
@@ -442,6 +446,7 @@ h3 {
 
 .step-note {
   margin-top: 10px;
+  max-width: 34rem;
 }
 
 .install-sidebar {
@@ -485,15 +490,17 @@ h3 {
 }
 
 .final-section {
-  padding-bottom: 88px;
+  padding-top: 56px;
+  padding-bottom: 96px;
 }
 
 .closing-card {
-  padding: 36px 32px;
+  padding: 40px 34px;
 }
 
 .closing-soft {
   color: var(--soft);
+  max-width: 34rem;
 }
 
 @media (max-width: 920px) {
@@ -504,10 +511,18 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding-top: 56px;
+  }
+
   .install-head,
   .site-header {
     align-items: start;
     flex-direction: column;
+  }
+
+  .site-nav {
+    gap: 12px;
   }
 
   .feature-card,
@@ -518,11 +533,12 @@ h3 {
 
 @media (max-width: 640px) {
   .section {
-    padding: 34px 0;
+    padding: 30px 0;
   }
 
   .section-heading,
-  .difference-heading {
+  .difference-heading,
+  .install-head {
     margin-bottom: 16px;
   }
 
@@ -530,9 +546,58 @@ h3 {
     width: min(100vw - 22px, 1120px);
   }
 
+  .site-header {
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .site-nav {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(159, 229, 221, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
   .hero {
-    padding-top: 42px;
-    gap: 22px;
+    padding-top: 18px;
+    gap: 18px;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 16vw, 4rem);
+    line-height: 0.96;
+  }
+
+  .lede,
+  .panel p,
+  .panel li,
+  .install-note,
+  .step-note {
+    font-size: 1rem;
+    line-height: 1.64;
+  }
+
+  .install-note,
+  .install-intro,
+  .closing-soft {
+    max-width: none;
   }
 
   .panel,
@@ -541,18 +606,45 @@ h3 {
     padding: 20px;
   }
 
-  .terminal-body,
-  .code-block pre {
-    padding-left: 16px;
-    padding-right: 16px;
+  .terminal-card,
+  .install-steps,
+  .install-sidebar,
+  .closing-card {
+    border-radius: 20px;
   }
 
-  .button,
+  .terminal-body {
+    padding: 16px 16px 20px;
+    font-size: 0.9rem;
+  }
+
+  .code-block pre {
+    padding: 14px 16px 16px;
+  }
+
+  .code-block {
+    border-radius: 16px;
+  }
+
   .copy-button {
+    position: static;
+    display: block;
+    width: calc(100% - 24px);
+    margin: 12px 12px 0;
+  }
+
+  .button {
     width: 100%;
   }
 
   .hero-actions {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .command-cloud span {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }

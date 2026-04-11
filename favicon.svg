@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89F3D7" stop-opacity="0.3" />
+      <stop offset="1" stop-color="#59D6FF" stop-opacity="0.22" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="#081821" />
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="17.25" fill="url(#bg)" stroke="#8BE0DB" stroke-opacity="0.26" stroke-width="1.5" />
+  <text x="32" y="39" text-anchor="middle" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.04em">CT</text>
+</svg>
