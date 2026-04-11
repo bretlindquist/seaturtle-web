@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeaTurtle CLI — Meet CT</title>
+    <meta
+      name="description"
+      content="Meet SeaTurtle CLI — a warm, project-aware coding companion with a clear path to install and begin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+      <header class="site-header wrap">
+        <a class="brand" href="#top" aria-label="SeaTurtle home">
+          <span class="brand-mark">CT</span>
+          <span class="brand-text">SeaTurtle CLI</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#difference">Why it feels different</a>
+          <a href="#install">Install</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero wrap">
+          <div class="hero-copy">
+            <p class="eyebrow">A terminal companion with a little tide in it.</p>
+            <h1>Meet SeaTurtle.</h1>
+            <p class="lede">
+              SeaTurtle CLI, or CT, is a coding companion designed to feel more
+              like a thoughtful operator than a faceless wrapper. It keeps room
+              for warmth, play, and personality without losing its grip on real
+              project work.
+            </p>
+            <p class="lede subtle">
+              This site is not trying to bury you in feature sludge. First you
+              meet the creature. Then you learn how to invite it onto your
+              machine.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#install">Install CT</a>
+              <a class="button secondary" href="#about">Who is this?</a>
+            </div>
+          </div>
+
+          <aside class="terminal-card" aria-label="SeaTurtle terminal preview">
+            <div class="terminal-topbar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="prompt">$</span> ct</p>
+              <p class="terminal-line terminal-soft">SeaTurtle wakes gently.</p>
+              <p class="terminal-line">Context sanctity engaged.</p>
+              <p class="terminal-line">Project posture: <strong>work</strong></p>
+              <p class="terminal-line">Companion posture: <strong>available</strong></p>
+              <p class="terminal-gap"></p>
+              <p><span class="prompt">/</span>login</p>
+              <p><span class="prompt">/</span>continue</p>
+              <p><span class="prompt">/</span>mermaid</p>
+              <p><span class="prompt">/</span>haiku</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section wrap" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">Who SeaTurtle is</p>
+            <h2>A coding shell with a point of view.</h2>
+          </div>
+          <div class="two-col narrative-grid">
+            <article class="panel panel-large">
+              <p>
+                SeaTurtle began from a source-build lineage, but it is no longer
+                just a renamed terminal. It carries its own behavior layers,
+                provider-aware runtime changes, project-local CT files, and a
+                stronger idea of what a coding companion can feel like.
+              </p>
+              <p>
+                The goal is not to cosplay sentience. The goal is to make the
+                terminal feel less dead while staying honest, precise, and
+                useful.
+              </p>
+            </article>
+            <article class="panel stack-list">
+              <h3>What you notice early</h3>
+              <ul>
+                <li>Warm voice without constant fluff</li>
+                <li>Sharp project-work posture when things get real</li>
+                <li>Research-backed planning when a problem deserves it</li>
+                <li>Private project-local `.ct/` guidance for continuity</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section wrap" id="difference">
+          <div class="section-heading">
+            <p class="eyebrow">Why it feels different</p>
+            <h2>SeaTurtle protects the shape of a moment.</h2>
+          </div>
+          <div class="card-grid">
+            <article class="panel feature-card">
+              <h3>Context sanctity</h3>
+              <p>
+                Project work, project exploration, side questions, playful chat,
+                and game-like moments are not all treated as the same soup.
+                SeaTurtle tries to keep them from muddying each other.
+              </p>
+            </article>
+            <article class="panel feature-card">
+              <h3>Private CT layer</h3>
+              <p>
+                Each repo can carry a private `.ct/` relationship stack: soul,
+                identity, role, user, attunement, and session. It is a quiet way
+                to preserve continuity without making you read a manifesto every
+                time.
+              </p>
+            </article>
+            <article class="panel feature-card">
+              <h3>Strong planning posture</h3>
+              <p>
+                When the task calls for it, SeaTurtle is meant to research,
+                diagram, and plan carefully before charging into implementation.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section wrap section-install" id="install">
+          <div class="section-heading install-head">
+            <div>
+              <p class="eyebrow">Install</p>
+              <h2>Bring SeaTurtle onto your computer.</h2>
+            </div>
+            <p class="install-note">
+              Right now the primary path is source-build installation from the
+              `seaturtle-cli` repository.
+            </p>
+          </div>
+
+          <div class="install-layout">
+            <article class="panel install-steps">
+              <ol>
+                <li>
+                  <h3>Clone the CLI repository</h3>
+                  <div class="code-block">
+                    <button class="copy-button" data-copy="git clone https://github.com/bretlindquist/seaturtle-cli && cd seaturtle-cli">Copy</button>
+                    <pre><code>git clone https://github.com/bretlindquist/seaturtle-cli
+cd seaturtle-cli</code></pre>
+                  </div>
+                </li>
+                <li>
+                  <h3>Install the local wrappers</h3>
+                  <div class="code-block">
+                    <button class="copy-button" data-copy="./scripts/install-local-cli.sh --build">Copy</button>
+                    <pre><code>./scripts/install-local-cli.sh --build</code></pre>
+                  </div>
+                  <p class="step-note">
+                    This builds the development bundle and installs `ct`,
+                    `seaturtle`, and `ct-dev`.
+                  </p>
+                </li>
+                <li>
+                  <h3>Start CT</h3>
+                  <div class="code-block">
+                    <button class="copy-button" data-copy="ct">Copy</button>
+                    <pre><code>ct</code></pre>
+                  </div>
+                </li>
+              </ol>
+            </article>
+
+            <aside class="panel install-sidebar">
+              <div>
+                <h3>Build prerequisites</h3>
+                <ul>
+                  <li>Node 18+</li>
+                  <li>npm</li>
+                  <li>bun</li>
+                </ul>
+              </div>
+              <div>
+                <h3>At startup</h3>
+                <p>
+                  CT can guide you through Anthropic auth, Anthropic Console
+                  auth, or OpenAI Codex OAuth. API-key operation is also
+                  supported via `OPENAI_API_KEY`.
+                </p>
+              </div>
+              <div>
+                <h3>Good first commands</h3>
+                <div class="command-cloud" aria-label="Example commands">
+                  <span>/login</span>
+                  <span>/continue</span>
+                  <span>/resume</span>
+                  <span>/status</span>
+                  <span>/telegram</span>
+                  <span>/autowork</span>
+                  <span>/mermaid</span>
+                  <span>/haiku</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section wrap final-section">
+          <article class="panel closing-card">
+            <p class="eyebrow">A small promise</p>
+            <h2>SeaTurtle is trying to be useful without becoming flat.</h2>
+            <p>
+              That means clearer install steps, real capabilities, honest edges,
+              and a little bit of life in the shell. If that sounds like your
+              kind of creature, the terminal is waiting.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="https://github.com/bretlindquist/seaturtle-cli">View the repo</a>
+              <a class="button secondary" href="#install">Install now</a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

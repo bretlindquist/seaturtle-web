@@ -2,30 +2,75 @@
 
 This file provides guidance to CT (ct) when working with code in this repository.
 
-## Current repository state
-
-This repository does not currently contain application source code, package metadata, or build/test configuration. At the moment it consists of CT project guidance under `.ct/` plus `CLAUDE.local.md`, which routes CT into those project-local instructions.
-
-Because of that, do not assume a framework, package manager, or test runner yet. Confirm the actual toolchain from checked-in files before suggesting or running project commands.
-
 ## Commands
 
-There are no repo-defined development commands yet.
+This repository is currently a handcrafted static site with no package manager or checked-in JS build pipeline.
 
-Before using build, lint, test, or dev commands, check for the files that would define them, such as:
+Common local workflow:
 
-- `package.json`
-- lockfiles (`pnpm-lock.yaml`, `package-lock.json`, `yarn.lock`)
-- framework config (`next.config.*`, `vite.config.*`, `astro.config.*`, etc.)
-- test runner config
+```bash
+python3 -m http.server 4173
+```
 
-Until those exist, do not invent commands like `npm test`, `pnpm lint`, or `next dev`.
+Then open <http://localhost:4173>.
+
+There are currently no repo-defined lint or test commands.
+
+Before adding tooling, prefer keeping the site lightweight unless the work clearly benefits from a framework or build step.
 
 ## High-level architecture
 
+### Site architecture
+
+The site is currently a single-page static landing site composed of:
+
+- `index.html` — all page structure and copy
+- `styles.css` — full visual system, layout, responsive behavior, and atmosphere
+- `main.js` — small client-side enhancements only; currently copy-to-clipboard buttons for install commands
+- `vercel.json` — minimal Vercel config using clean URLs
+- `README.md` — lightweight local preview instructions
+
+This is intentionally not a framework app yet. The current architecture favors direct control over voice, spacing, and composition.
+
+### Content strategy
+
+The page is structured as a short journey instead of a feature catalog:
+
+1. atmospheric introduction
+2. who SeaTurtle is
+3. why it feels different
+4. install path
+5. closing CTA
+
+That structure matters. The site should let visitors meet SeaTurtle before shifting into installation instructions.
+
+### Relationship to `seaturtle-cli`
+
+This site is a presentation layer for the nearby `seaturtle-cli` project, not the product runtime itself.
+
+The current install guidance is based on the CLI repo's real source-build flow:
+
+- clone `seaturtle-cli`
+- run `./scripts/install-local-cli.sh --build`
+- start with `ct`
+
+If the CLI install flow changes, update the website copy to match the CLI README rather than letting the two drift.
+
+### Design posture
+
+This repo's `.ct/` files are part of the working architecture because they define how CT should shape design decisions here.
+
+Key implications from the project-local guidance:
+
+- keep the site warm, lightly playful, and non-generic
+- preserve SeaTurtle's sense of presence without over-explaining hidden machinery
+- improve hierarchy, spacing, rhythm, legibility, and responsive behavior before adding flourish
+- avoid generic AI landing page patterns and overlong feature-grid sludge
+- keep the install path clear, but do not flatten the personality out of the site
+
 ### Instruction routing
 
-`CLAUDE.local.md` delegates to `.ct/router.md`, which in turn includes the project's private instruction set:
+`CLAUDE.local.md` delegates to `.ct/router.md`, which layers the repo's private CT guidance:
 
 - `.ct/soul.md`
 - `.ct/identity.md`
@@ -34,32 +79,11 @@ Until those exist, do not invent commands like `npm test`, `pnpm lint`, or `next
 - `.ct/attunement.md`
 - `.ct/session.md`
 
-This means the primary architecture in the repo right now is not app code; it is CT behavior composition.
+For future CT instances, those files are important context for preserving the intended voice and UX quality bar of the site.
 
-### Roles of the `.ct/` files
+## What to preserve when editing
 
-- `.ct/soul.md` defines the baseline SeaTurtle personality: kind, lightly playful, persistent, honest about uncertainty, and willing to plan carefully before heavier execution.
-- `.ct/identity.md` defines the operating identity for this repo: CT is a warm operator focused on polish, calm next steps, and user-facing clarity.
-- `.ct/role.md` reinforces the execution posture: start exploratory, then collapse into implementation once the shape is clear.
-- `.ct/attunement.md` is the most behaviorally specific file. It emphasizes respect for the user's time, workspace, and concentration; preserving spirit over flattening; and putting hierarchy, spacing, rhythm, and responsive behavior first in UI work.
-- `.ct/user.md` provides lightweight human context: this is the user's own website, intended for Vercel hosting.
-- `.ct/session.md` is for short-lived intent anchoring during active work: goal, constraints, desired feel, wrong-fit signals, active decisions, and next check.
-- `.ct/bootstrap.md` is first-run / retune guidance for discovery-oriented conversations.
-
-### Practical implications for future CT instances
-
-- Treat `.ct/attunement.md` and `.ct/identity.md` as the highest-signal files for day-to-day behavior in this repo.
-- Preserve creative intent when shaping UX, copy, layout, or interaction decisions; do not over-harden early ideas into rigid rules.
-- For UI/frontend work, prefer improvements to hierarchy, spacing, rhythm, legibility, flow, responsiveness, and edge states before decorative flourish.
-- Keep explanations compact but warm. Ask short clarifying questions only when they help unblock the next concrete step.
-- Use `.ct/session.md` as the place to keep temporary project intent aligned during implementation; it is not a long-term memory file.
-
-## What to verify once app code is added
-
-When this repo grows beyond the current CT scaffold, update this file with:
-
-- the actual package manager and canonical install/dev/build/lint/test commands
-- how to run a single test in the chosen test runner
-- the deployed framework/runtime
-- the real top-level application architecture and data flow
-- any Vercel-specific build or deployment assumptions that become checked in
+- The site should feel authored, not templated.
+- Prefer a few strong sections over many shallow ones.
+- Keep installation instructions concrete and real.
+- If you introduce a framework later, update this file with the actual dev/build/test commands and the new architecture boundaries.
