@@ -1,64 +1,44 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="160" y1="40" x2="1060" y2="630" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="128" y1="24" x2="1068" y2="630" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0A1820" />
       <stop offset="0.52" stop-color="#07131A" />
       <stop offset="1" stop-color="#051018" />
     </linearGradient>
-    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 140) rotate(27.4) scale(310 240)">
-      <stop stop-color="#6EF1D7" stop-opacity="0.34" />
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(244 146) rotate(31) scale(292 228)">
+      <stop stop-color="#6EF1D7" stop-opacity="0.32" />
       <stop offset="1" stop-color="#6EF1D7" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1010 156) rotate(135.6) scale(280 220)">
-      <stop stop-color="#6C86FF" stop-opacity="0.28" />
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(978 156) rotate(137) scale(286 224)">
+      <stop stop-color="#6C86FF" stop-opacity="0.24" />
       <stop offset="1" stop-color="#6C86FF" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="glowC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 520) rotate(-169.8) scale(380 240)">
-      <stop stop-color="#4FD6FF" stop-opacity="0.18" />
+    <radialGradient id="glowC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(924 510) rotate(-163) scale(340 210)">
+      <stop stop-color="#4FD6FF" stop-opacity="0.16" />
       <stop offset="1" stop-color="#4FD6FF" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="cardStroke" x1="266" y1="144" x2="942" y2="470" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8BE0DB" stop-opacity="0.26" />
-      <stop offset="1" stop-color="#8BE0DB" stop-opacity="0.08" />
+    <linearGradient id="badge" x1="152" y1="136" x2="264" y2="248" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89F3D7" stop-opacity="0.34" />
+      <stop offset="1" stop-color="#59D6FF" stop-opacity="0.24" />
     </linearGradient>
-    <linearGradient id="badge" x1="290" y1="176" x2="378" y2="264" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#89F3D7" stop-opacity="0.26" />
-      <stop offset="1" stop-color="#59D6FF" stop-opacity="0.18" />
-    </linearGradient>
-    <filter id="blur" x="-80" y="-80" width="1360" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="40" />
-    </filter>
   </defs>
 
-  <rect width="1200" height="630" rx="0" fill="url(#bg)" />
-  <g filter="url(#blur)">
-    <ellipse cx="220" cy="140" rx="220" ry="160" fill="url(#glowA)" />
-    <ellipse cx="1010" cy="156" rx="220" ry="160" fill="url(#glowB)" />
-    <ellipse cx="960" cy="520" rx="280" ry="160" fill="url(#glowC)" />
-  </g>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <ellipse cx="244" cy="146" rx="230" ry="168" fill="url(#glowA)" />
+  <ellipse cx="978" cy="156" rx="214" ry="164" fill="url(#glowB)" />
+  <ellipse cx="924" cy="510" rx="274" ry="164" fill="url(#glowC)" />
 
-  <rect x="250" y="116" width="700" height="398" rx="34" fill="rgba(8, 24, 33, 0.72)" />
-  <rect x="250.75" y="116.75" width="698.5" height="396.5" rx="33.25" stroke="url(#cardStroke)" stroke-width="1.5" />
+  <rect x="140" y="120" width="92" height="92" rx="30" fill="#081821" />
+  <rect x="140.75" y="120.75" width="90.5" height="90.5" rx="29.25" fill="url(#badge)" stroke="#8BE0DB" stroke-opacity="0.24" stroke-width="1.5" />
+  <text x="186" y="179" text-anchor="middle" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.04em">CT</text>
 
-  <rect x="286" y="154" width="74" height="74" rx="24" fill="url(#badge)" />
-  <rect x="286.75" y="154.75" width="72.5" height="72.5" rx="23.25" stroke="#8BE0DB" stroke-opacity="0.22" stroke-width="1.5" />
-  <text x="323" y="201" text-anchor="middle" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="-0.04em">CT</text>
+  <text x="140" y="266" fill="#89F3D7" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="0.18em">MEET CT IN THE SHELL</text>
 
-  <text x="392" y="183" fill="#89F3D7" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.16em">A TERMINAL COMPANION WITH A LITTLE TIDE IN IT</text>
-  <text x="286" y="302" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="78" font-weight="800" letter-spacing="-0.06em">Meet SeaTurtle.</text>
+  <text x="140" y="392" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="108" font-weight="800" letter-spacing="-0.075em">Meet</text>
+  <text x="140" y="498" fill="#ECF9F7" font-family="Inter, system-ui, sans-serif" font-size="108" font-weight="800" letter-spacing="-0.075em">SeaTurtle.</text>
 
-  <text x="286" y="364" fill="#B0D2D3" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="500">A warm coding companion for the shell.</text>
-  <text x="286" y="407" fill="#8EB3B6" font-family="Inter, system-ui, sans-serif" font-size="27" font-weight="500">Meet CT first. Then bring it onto your machine.</text>
+  <text x="146" y="560" fill="#B0D2D3" font-family="Inter, system-ui, sans-serif" font-size="31" font-weight="500">A warm coding companion for the shell.</text>
 
-  <rect x="286" y="450" width="256" height="48" rx="24" fill="#89F3D7" />
-  <text x="414" y="481" text-anchor="middle" fill="#062027" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">Bring CT home</text>
-
-  <g opacity="0.95">
-    <text x="792" y="252" fill="#89F3D7" font-family="IBM Plex Mono, monospace" font-size="24">$</text>
-    <text x="820" y="252" fill="#D8F8EE" font-family="IBM Plex Mono, monospace" font-size="24">ct</text>
-    <text x="792" y="296" fill="#8ADFCF" font-family="IBM Plex Mono, monospace" font-size="21">SeaTurtle wakes gently.</text>
-    <text x="792" y="336" fill="#D8F8EE" font-family="IBM Plex Mono, monospace" font-size="19">Project recognized: <tspan fill="#F2FFFC" font-weight="600">seaturtle-website</tspan></text>
-    <text x="792" y="372" fill="#D8F8EE" font-family="IBM Plex Mono, monospace" font-size="19">Work posture: <tspan fill="#F2FFFC" font-weight="600">warm operator</tspan></text>
-    <text x="792" y="408" fill="#D8F8EE" font-family="IBM Plex Mono, monospace" font-size="19">Install path: <tspan fill="#F2FFFC" font-weight="600">ready when you are</tspan></text>
-  </g>
+  <text x="866" y="240" fill="#89F3D7" font-family="IBM Plex Mono, monospace" font-size="24">$ ct</text>
+  <text x="866" y="286" fill="#8ADFCF" font-family="IBM Plex Mono, monospace" font-size="22">SeaTurtle wakes gently.</text>
 </svg>
