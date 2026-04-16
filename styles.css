@@ -406,8 +406,11 @@ h3 {
 }
 
 .code-block {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   margin-top: 10px;
+  padding: 12px 12px 0;
   border-radius: 18px;
   background: rgba(1, 10, 16, 0.76);
   border: 1px solid rgba(111, 184, 195, 0.16);
@@ -416,7 +419,8 @@ h3 {
 
 .code-block pre {
   margin: 0;
-  padding: 18px 20px 20px;
+  padding: 6px 8px 20px;
+  width: 100%;
   overflow-x: auto;
 }
 
@@ -429,9 +433,6 @@ h3 {
 }
 
 .copy-button {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   border: 1px solid rgba(173, 229, 224, 0.18);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
@@ -619,18 +620,18 @@ h3 {
   }
 
   .code-block pre {
-    padding: 14px 16px 16px;
+    padding: 8px 4px 16px;
   }
 
   .code-block {
     border-radius: 16px;
+    padding: 12px 12px 0;
   }
 
   .copy-button {
-    position: static;
     display: block;
-    width: calc(100% - 24px);
-    margin: 12px 12px 0;
+    width: 100%;
+    margin: 0;
   }
 
   .button {
