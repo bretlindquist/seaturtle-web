@@ -6,13 +6,13 @@
     <title>SeaTurtle CLI — Meet CT in the Shell</title>
     <meta
       name="description"
-      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear, direct install path."
     />
     <meta name="theme-color" content="#07131a" />
     <meta property="og:title" content="SeaTurtle CLI — Meet CT in the Shell" />
     <meta
       property="og:description"
-      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear, direct install path."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/social-card-v3.png" />
@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="SeaTurtle CLI — Meet CT in the Shell" />
     <meta
       name="twitter:description"
-      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear source-build install path."
+      content="Meet SeaTurtle CLI, a warm coding companion for the shell, then bring CT onto your machine with a clear, direct install path."
     />
     <meta name="twitter:image" content="/social-card-v3.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -104,7 +104,9 @@
                 SeaTurtle grew out of a source-build lineage, but what matters
                 here is the feeling of the thing now: a companion with a real
                 point of view about focus, continuity, and the shape of good
-                work.
+                work. Most people can install it directly now, no local compile
+                required. If you want to work from source, that path is still
+                open too.
               </p>
               <p>
                 It is not trying to pretend to be a person. It is trying to make
@@ -169,88 +171,93 @@
               <h2>Bring SeaTurtle onto your computer.</h2>
             </div>
             <p class="install-note">
-              Right now the clearest path is a source-build install from the
-              `seaturtle-cli` repository. A little hands-on, but it tells the
-              truth about what is actually happening.
+              Most people should install SeaTurtle directly and start with <code>ct</code>.
+              Right now the published release artifact is available for Apple Silicon macOS.
+              If you are on another platform or want to work from source, use the contributor build path below.
             </p>
           </div>
 
           <div class="install-layout">
             <article class="panel install-steps">
-              <p class="install-intro">
-                The current path is real, local, and slightly hands-on. The
-                installer checks what it needs, builds the bundle, and tells you
-                what to do next if your shell cannot see `ct` yet.
-              </p>
-              <ol>
-                <li>
-                  <h3>Clone the CLI repository</h3>
-                  <div class="code-block">
-                    <button class="copy-button" data-copy="git clone https://github.com/bretlindquist/seaturtle-cli && cd seaturtle-cli">Copy</button>
-                    <pre><code>git clone https://github.com/bretlindquist/seaturtle-cli
-cd seaturtle-cli</code></pre>
-                  </div>
-                </li>
-                <li>
-                  <h3>Install the local wrappers</h3>
-                  <div class="code-block">
-                    <button class="copy-button" data-copy="./scripts/install-local-cli.sh --build">Copy</button>
-                    <pre><code>./scripts/install-local-cli.sh --build</code></pre>
-                  </div>
-                  <p class="step-note">
-                    This builds the development bundle, installs `ct`,
-                    `seaturtle`, and `ct-dev`, and checks the build
-                    prerequisites before it starts.
-                  </p>
-                </li>
-                <li>
+              <div class="install-path-group primary-path">
+                <h3>Install SeaTurtle</h3>
+                <p class="install-intro">
+                  The normal install for most people. No local compile required.
+                  On the current release, this published artifact path is for Apple Silicon macOS.
+                </p>
+                <div class="code-block">
+                  <button class="copy-button" data-copy="curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash">Copy</button>
+                  <pre><code>curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash</code></pre>
+                </div>
+              </div>
+
+              <div class="install-path-row">
+                <div class="install-path-group">
                   <h3>Start CT</h3>
-                  <div class="code-block">
+                  <div class="code-block compact-code">
                     <button class="copy-button" data-copy="ct">Copy</button>
                     <pre><code>ct</code></pre>
                   </div>
-                  <p class="step-note">
-                    If `ct` is not on your `PATH` yet, the installer should tell
-                    you where it landed and what to add.
-                  </p>
-                </li>
-              </ol>
+                </div>
+
+                <div class="install-path-group">
+                  <h3>Update CT</h3>
+                  <div class="code-block compact-code">
+                    <button class="copy-button" data-copy="ct update">Copy</button>
+                    <pre><code>ct update</code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div class="install-path-group secondary-path">
+                <h3>Contributor build from source</h3>
+                <p class="step-note">
+                  If you want to contribute, work from source, or you are on a platform
+                  without the current release artifact, use the source-build installer.
+                </p>
+                <div class="code-block">
+                  <button class="copy-button" data-copy="git clone https://github.com/bretlindquist/seaturtle-cli && cd seaturtle-cli && ./scripts/install-local-cli.sh --build">Copy</button>
+                  <pre><code>git clone https://github.com/bretlindquist/seaturtle-cli
+cd seaturtle-cli
+./scripts/install-local-cli.sh --build</code></pre>
+                </div>
+                <p class="step-note">
+                  Then start the same way: <code>ct</code>.
+                </p>
+              </div>
             </article>
 
             <aside class="panel install-sidebar">
               <div class="sidebar-block">
                 <p class="sidebar-label">You will want</p>
-                <h3>Build prerequisites</h3>
-                <ul>
-                  <li>Node 18+</li>
-                  <li>npm</li>
-                  <li>bun</li>
+                <h3>Prerequisites</h3>
+                <ul class="sidebar-list">
+                  <li><strong>Direct install:</strong> Apple Silicon macOS, a shell, and <code>curl</code>.</li>
+                  <li><strong>Source build:</strong> Node 18+, npm, and bun.</li>
                 </ul>
               </div>
               <div class="sidebar-block">
                 <p class="sidebar-label">When CT wakes up</p>
                 <h3>Choose your way in</h3>
                 <p>
-                  CT can guide you through Anthropic account auth, Anthropic
-                  Console auth, or OpenAI Codex OAuth. On the OpenAI side, the
-                  preferred path is native CT-owned OAuth, with legacy Codex
-                  CLI auth still available as a fallback. If you prefer a
-                  key-shaped route, `OPENAI_API_KEY` works too.
+                  SeaTurtle speaks OpenAI, Anthropic, and Gemini natively on the
+                  backend, with support for recent models and tool use across all
+                  three. Pick the provider that fits how you like to work, then let
+                  CT wake up there.
                 </p>
               </div>
               <div class="sidebar-block">
                 <p class="sidebar-label">Good first ripples</p>
                 <h3>Useful early commands</h3>
                 <div class="command-cloud" aria-label="Example commands">
+                  <span>ct</span>
+                  <span>ct update</span>
                   <span>/login</span>
                   <span>/continue</span>
                   <span>/resume</span>
                   <span>/status</span>
                   <span>/model</span>
-                  <span>/effort</span>
                   <span>/autowork</span>
-                  <span>/mermaid</span>
-                  <span>/haiku</span>
                 </div>
               </div>
             </aside>

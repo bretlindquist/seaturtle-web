@@ -394,6 +394,44 @@ h3 {
 
 .install-steps {
   background: rgba(9, 26, 35, 0.82);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.primary-path {
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(137, 243, 215, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(137, 243, 215, 0.18);
+}
+
+.install-path-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.install-path-group h3 {
+  color: var(--text);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.secondary-path {
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(139, 224, 219, 0.1);
+}
+
+.compact-code {
+  margin-top: 0;
+}
+
+.secondary-path h3 {
+  font-size: 1.1rem;
+  color: var(--soft);
 }
 
 .install-intro {
@@ -406,11 +444,8 @@ h3 {
 }
 
 .code-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   margin-top: 10px;
-  padding: 12px 12px 0;
+  padding: 12px;
   border-radius: 18px;
   background: rgba(1, 10, 16, 0.76);
   border: 1px solid rgba(111, 184, 195, 0.16);
@@ -419,7 +454,7 @@ h3 {
 
 .code-block pre {
   margin: 0;
-  padding: 6px 8px 20px;
+  padding: 6px 8px 8px;
   width: 100%;
   overflow-x: auto;
 }
@@ -429,20 +464,30 @@ h3 {
   font-family: var(--mono);
   font-size: 0.95rem;
   line-height: 1.7;
-  overflow-wrap: anywhere;
 }
 
 .copy-button {
-  border: 1px solid rgba(173, 229, 224, 0.18);
+  display: block;
+  width: fit-content;
+  margin: 0 0 10px auto;
+  border: 1px solid rgba(137, 243, 215, 0.14);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  padding: 8px 12px;
+  background: rgba(6, 24, 32, 0.88);
+  color: #dffbf6;
+  padding: 7px 11px;
+  font-size: 0.8rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
   cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .copy-button:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(9, 31, 41, 0.96);
+  border-color: rgba(137, 243, 215, 0.24);
+  transform: translateY(-1px);
 }
 
 .step-note {
@@ -472,6 +517,24 @@ h3 {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.sidebar-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-list li {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.sidebar-list li strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .command-cloud {
@@ -508,7 +571,8 @@ h3 {
   .hero,
   .narrative-grid,
   .difference-flow,
-  .install-layout {
+  .install-layout,
+  .install-path-row {
     grid-template-columns: 1fr;
   }
 
@@ -620,18 +684,16 @@ h3 {
   }
 
   .code-block pre {
-    padding: 8px 4px 16px;
+    padding: 6px 4px 4px;
   }
 
   .code-block {
     border-radius: 16px;
-    padding: 12px 12px 0;
+    padding: 12px;
   }
 
   .copy-button {
-    display: block;
-    width: 100%;
-    margin: 0;
+    margin: 0 0 10px auto;
   }
 
   .button {
