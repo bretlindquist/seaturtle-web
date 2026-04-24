@@ -244,16 +244,16 @@ h3 {
 
 .hero-art {
   position: absolute;
-  inset: -64px -78px -52px -42px;
+  inset: -72px -104px -66px -54px;
   z-index: -1;
   background:
-    radial-gradient(circle at 42% 52%, rgba(7, 19, 26, 0.2), rgba(7, 19, 26, 0.74) 58%, rgba(7, 19, 26, 0.96) 100%),
-    linear-gradient(90deg, rgba(7, 19, 26, 0.94), rgba(7, 19, 26, 0.34) 58%, rgba(7, 19, 26, 0.12)),
-    url("./assets/seaturtle-hero-atmosphere.png") center / cover no-repeat;
+    radial-gradient(circle at 38% 52%, rgba(7, 19, 26, 0.08), rgba(7, 19, 26, 0.42) 54%, rgba(7, 19, 26, 0.9) 100%),
+    linear-gradient(90deg, rgba(7, 19, 26, 0.82), rgba(7, 19, 26, 0.18) 58%, rgba(7, 19, 26, 0.02)),
+    url("./assets/seaturtle-hero-atmosphere.png") 62% center / cover no-repeat;
   border-radius: 38px;
-  opacity: 0.82;
-  filter: saturate(1.05) contrast(1.02);
-  mask-image: radial-gradient(ellipse at 58% 48%, black 0 54%, rgba(0, 0, 0, 0.82) 66%, transparent 82%);
+  opacity: 0.98;
+  filter: saturate(1.16) contrast(1.08);
+  mask-image: radial-gradient(ellipse at 60% 48%, black 0 62%, rgba(0, 0, 0, 0.88) 72%, transparent 90%);
 }
 
 .hero-art::after {
@@ -660,9 +660,9 @@ h3 {
   }
 
   .hero-art {
-    inset: -36px -28px -34px;
-    opacity: 0.68;
-    mask-image: radial-gradient(ellipse at 54% 50%, black 0 48%, rgba(0, 0, 0, 0.74) 62%, transparent 82%);
+    inset: -44px -38px -40px;
+    opacity: 0.82;
+    mask-image: radial-gradient(ellipse at 54% 50%, black 0 54%, rgba(0, 0, 0, 0.78) 66%, transparent 86%);
   }
 
   .install-head,
@@ -743,8 +743,8 @@ h3 {
   }
 
   .hero-art {
-    inset: -26px -18px -28px;
-    opacity: 0.56;
+    inset: -30px -22px -30px;
+    opacity: 0.7;
     border-radius: 28px;
   }
 
