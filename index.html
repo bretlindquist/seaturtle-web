@@ -171,72 +171,119 @@
               <h2>Bring SeaTurtle onto your computer.</h2>
             </div>
             <p class="install-note">
-              Most people should install SeaTurtle directly and start with <code>ct</code>.
-              Right now the published release artifact is available for Apple Silicon macOS.
-              If you are on another platform or want to work from source, use the contributor build path below.
+              There are two real ways in now: the normal release install for
+              supported platforms, and a source-build route for contributors or
+              unsupported setups. Windows now has a direct release download, even
+              though the shell installer remains Unix-only.
             </p>
           </div>
 
           <div class="install-layout">
             <article class="panel install-steps">
-              <div class="install-path-group primary-path">
-                <h3>Install SeaTurtle</h3>
-                <p class="install-intro">
-                  The normal install for most people. No local compile required.
-                  On the current release, this published artifact path is for Apple Silicon macOS.
-                </p>
-                <div class="code-block">
-                  <button class="copy-button" data-copy="curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash">Copy</button>
-                  <pre><code>curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash</code></pre>
-                </div>
-              </div>
-
-              <div class="install-path-row">
-                <div class="install-path-group quick-step">
-                  <p class="quick-step-label">Then</p>
-                  <h3>Start CT</h3>
-                  <div class="code-block compact-code">
-                    <button class="copy-button" data-copy="ct">Copy</button>
-                    <pre><code>ct</code></pre>
+              <div class="install-routes">
+                <section class="install-path-group primary-path route-card">
+                  <p class="route-label">Route 1</p>
+                  <h3>Direct install</h3>
+                  <p class="install-intro">
+                    The normal product install. No local compile required. The
+                    published release path currently covers macOS through the
+                    shell installer and Windows through a direct GitHub release
+                    download.
+                  </p>
+                  <div class="code-block">
+                    <button class="copy-button" data-copy="curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash">Copy</button>
+                    <pre><code>curl -fsSL https://raw.githubusercontent.com/bretlindquist/seaturtle-cli/master/scripts/install-release-cli.sh | bash</code></pre>
                   </div>
-                </div>
+                  <div class="install-path-row route-followups">
+                    <div class="install-path-group quick-step">
+                      <p class="quick-step-label">Then</p>
+                      <h3>Start CT</h3>
+                      <div class="code-block compact-code">
+                        <button class="copy-button" data-copy="ct">Copy</button>
+                        <pre><code>ct</code></pre>
+                      </div>
+                    </div>
 
-                <div class="install-path-group quick-step">
-                  <p class="quick-step-label">Later</p>
-                  <h3>Update CT</h3>
-                  <div class="code-block compact-code">
-                    <button class="copy-button" data-copy="ct update">Copy</button>
-                    <pre><code>ct update</code></pre>
+                    <div class="install-path-group quick-step">
+                      <p class="quick-step-label">Windows</p>
+                      <h3>Download release zip</h3>
+                      <div class="code-block compact-code">
+                        <button class="copy-button" data-copy="https://github.com/bretlindquist/seaturtle-cli/releases/download/v1.10/seaturtle-windows-x64.zip">Copy</button>
+                        <pre><code>https://github.com/bretlindquist/seaturtle-cli/releases/download/v1.10/seaturtle-windows-x64.zip</code></pre>
+                      </div>
+                    </div>
+
+                    <div class="install-path-group quick-step">
+                      <p class="quick-step-label">Later</p>
+                      <h3>Update CT</h3>
+                      <div class="code-block compact-code">
+                        <button class="copy-button" data-copy="ct update">Copy</button>
+                        <pre><code>ct update</code></pre>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </section>
 
-              <div class="install-path-group secondary-path">
-                <h3>Contributor build from source</h3>
-                <p class="step-note">
-                  If you want to contribute, work from source, or you are on a platform
-                  without the current release artifact, use the source-build installer.
-                </p>
-                <div class="code-block">
-                  <button class="copy-button" data-copy="git clone https://github.com/bretlindquist/seaturtle-cli && cd seaturtle-cli && ./scripts/install-local-cli.sh --build">Copy</button>
-                  <pre><code>git clone https://github.com/bretlindquist/seaturtle-cli
+                <section class="install-path-group secondary-path route-card">
+                  <p class="route-label">Route 2</p>
+                  <h3>Build from source</h3>
+                  <p class="step-note">
+                    Use this if you want to contribute, need the repo build, or
+                    are on a setup the published release path does not cover yet.
+                  </p>
+
+                  <div class="source-grid">
+                    <div class="source-block">
+                      <h4>What you need first</h4>
+                      <ul class="sidebar-list source-list">
+                        <li><strong>Git</strong> to clone the repo.</li>
+                        <li><strong>Node.js 18+</strong> with <code>npm</code>.</li>
+                        <li><strong>Bun</strong> on your PATH for the bundle step.</li>
+                        <li><strong>A Unix-like shell on Windows</strong>, such as Git Bash.</li>
+                      </ul>
+                    </div>
+
+                    <div class="source-block">
+                      <h4>Windows source-build path</h4>
+                      <div class="code-block">
+                        <button class="copy-button" data-copy="git clone https://github.com/bretlindquist/seaturtle-cli
+cd seaturtle-cli
+./scripts/install-local-cli.sh --build">Copy</button>
+                        <pre><code>git clone https://github.com/bretlindquist/seaturtle-cli
 cd seaturtle-cli
 ./scripts/install-local-cli.sh --build</code></pre>
-                </div>
-                <p class="step-note">
-                  Then start the same way: <code>ct</code>.
-                </p>
+                      </div>
+                      <p class="step-note compact-note">
+                        Run that from Git Bash. The installer verifies <code>node</code>, <code>npm</code>, and <code>bun</code>, builds the repo, then links the local CT wrappers.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="step-note">
+                    After the build finishes, start the same way: <code>ct</code>.
+                  </p>
+                </section>
               </div>
             </article>
 
             <aside class="panel install-sidebar">
               <div class="sidebar-block">
-                <p class="sidebar-label">You will want</p>
-                <h3>Prerequisites</h3>
+                <p class="sidebar-label">Platform note</p>
+                <h3>How to choose</h3>
                 <ul class="sidebar-list">
-                  <li><strong>Direct install:</strong> Apple Silicon macOS, a shell, and <code>curl</code>.</li>
-                  <li><strong>Source build:</strong> Node 18+, npm, and bun.</li>
+                  <li><strong>macOS:</strong> Use the direct install unless you specifically want the repo build.</li>
+                  <li><strong>Windows:</strong> Download the release zip, then run <code>ct.exe</code>.</li>
+                  <li><strong>Linux:</strong> Use the repo build for now unless we ship a Linux release path later.</li>
                 </ul>
+              </div>
+              <div class="sidebar-block">
+                <p class="sidebar-label">Windows heads-up</p>
+                <h3>Direct download for now</h3>
+                <p>
+                  Windows now ships as a GitHub release zip with <code>ct.exe</code>.
+                  The shell installer and <code>ct update</code> are still Unix-only,
+                  so Windows uses the direct download path for now.
+                </p>
               </div>
               <div class="sidebar-block">
                 <p class="sidebar-label">When CT wakes up</p>
