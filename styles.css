@@ -378,50 +378,79 @@ h3 {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 26px;
+  gap: 28px;
+  margin-bottom: 28px;
 }
 
 .install-note {
-  max-width: 30rem;
+  max-width: 32rem;
+  color: var(--soft);
 }
 
 .install-layout {
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
   align-items: start;
-  gap: 24px;
+  gap: 20px;
 }
 
 .install-steps {
-  background: rgba(9, 26, 35, 0.82);
+  background: rgba(9, 26, 35, 0.84);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
+  padding: 26px;
+}
+
+.install-path-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary-path,
+.quick-step,
+.secondary-path {
+  position: relative;
+  border-radius: 20px;
 }
 
 .primary-path {
-  padding: 22px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(137, 243, 215, 0.07), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(137, 243, 215, 0.18);
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(137, 243, 215, 0.09), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(137, 243, 215, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .install-path-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .install-path-group h3 {
   color: var(--text);
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.quick-step {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(139, 224, 219, 0.1);
+  min-height: 100%;
+}
+
+.quick-step-label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .secondary-path {
   padding: 20px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(139, 224, 219, 0.1);
 }
 
@@ -430,12 +459,12 @@ h3 {
 }
 
 .secondary-path h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--soft);
 }
 
 .install-intro {
-  margin: 0 0 26px;
+  margin: 0 0 18px;
   max-width: 42rem;
 }
 
@@ -460,10 +489,12 @@ h3 {
 }
 
 .code-block code {
+  display: block;
   color: #ddfbf8;
   font-family: var(--mono);
   font-size: 0.95rem;
   line-height: 1.7;
+  white-space: pre;
 }
 
 .copy-button {
@@ -497,26 +528,37 @@ h3 {
 
 .install-sidebar {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   background: var(--panel-strong);
+  padding: 22px;
 }
 
 .sidebar-block {
-  padding: 2px 0 0;
+  padding: 0;
 }
 
 .sidebar-block + .sidebar-block {
-  padding-top: 18px;
-  border-top: 1px solid rgba(139, 224, 219, 0.1);
+  padding-top: 16px;
+  border-top: 1px solid rgba(139, 224, 219, 0.08);
 }
 
 .sidebar-label {
   margin: 0 0 8px;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.install-sidebar h3 {
+  margin-bottom: 8px;
+}
+
+.install-sidebar p,
+.install-sidebar li {
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .sidebar-list {
@@ -540,17 +582,19 @@ h3 {
 .command-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .command-cloud span {
-  padding: 10px 12px;
+  padding: 9px 11px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(139, 224, 219, 0.12);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(139, 224, 219, 0.1);
   color: #daf8f1;
   font-family: var(--mono);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
+  line-height: 1;
 }
 
 .final-section {
@@ -584,6 +628,14 @@ h3 {
   .site-header {
     align-items: start;
     flex-direction: column;
+  }
+
+  .install-note {
+    max-width: 40rem;
+  }
+
+  .install-steps {
+    padding: 24px;
   }
 
   .site-nav {
@@ -669,6 +721,26 @@ h3 {
   .panel-large,
   .closing-card {
     padding: 20px;
+  }
+
+  .install-steps,
+  .install-sidebar {
+    padding: 20px;
+  }
+
+  .install-steps {
+    gap: 16px;
+  }
+
+  .primary-path,
+  .quick-step,
+  .secondary-path {
+    border-radius: 18px;
+  }
+
+  .quick-step,
+  .secondary-path {
+    padding: 16px;
   }
 
   .terminal-card,
